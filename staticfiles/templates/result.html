@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - GEN_CAP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            height: 50px;
+            margin-left: 10px;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            margin-top: 70px;
+            margin-bottom: 70px;
+        }
+
+        .caption-text {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="{% static 'Caption.jpeg' %}" alt="Logo">
+        <h1>GEN_CAP</h1>
+    </div>
+    <div class="container">
+        <div class="card mx-auto" style="max-width: 500px;">
+            <div class="card-header">
+                Generated Caption
+            </div>
+            <div class="card-body">
+                <div class="image-container">
+                    <img src="{{ image.file.url }}" class="img-fluid" alt="Uploaded Image">
+                    <p>{{ caption }}</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 GEN_CAP. All Rights Reserved.
+    </div>
+</body>
+
+</html>

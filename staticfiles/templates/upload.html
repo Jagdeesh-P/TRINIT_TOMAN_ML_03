@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image - GEN_CAP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    body {
+        background-color: black;
+    }
+
+    .header {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .header img {
+        height: 50px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+
+    .header h1 {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    .footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .container {
+        margin-top: 70px;
+        margin-bottom: 70px;
+        border-radius: 25px;
+    }
+
+    /* Change upload button background color */
+    .btn-upload {
+        background-color: #007bff !important;
+        color: white;
+    }
+
+    .btn-upload:hover {
+        background-color: #0056b3 !important;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="{% static 'Caption.jpeg' %}" alt="Logo">
+        <h1>GEN_CAP</h1>
+    </div>
+    <div class="container">
+        <div class="card mx-auto" style="max-width: 500px;">
+            <div class="card-header">
+                Upload Image
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label style="border-radius: 50px;" for="file">Choose a File:</label>
+                        <input type="file" class="form-control-file" id="file" name="file">
+                    </div>
+                    <button type="submit" class="btn btn-upload">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 GEN_CAP. All Rights Reserved.
+    </div>
+</body>
+
+</html>
